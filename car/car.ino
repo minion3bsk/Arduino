@@ -25,6 +25,7 @@ void loop() {
   digitalWrite(trigPin, LOW);
   duration = pulseIn(echoPin, HIGH);   
   duration = duration * 0.000001 * 34000 / 2;
+  Serial.println(duration);
   if( duration < 10 ){
     digitalWrite(8, HIGH);
     digitalWrite(9, LOW);
