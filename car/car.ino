@@ -1,5 +1,6 @@
-const int trigPin = 2;
-const int echoPin = 3;
+int trigPin = 2;
+int echoPin = 3;
+
 
 double duration = 0;
 double distance = 0;
