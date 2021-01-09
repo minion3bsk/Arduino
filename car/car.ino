@@ -32,14 +32,15 @@ void loop() {
   duration = duration * 0.000001 * 34000 / 2;
   Serial.println(duration);
   if( duration < 10 ){
-    analogWrite(right1Pin, 180);
+    analogWrite(right1Pin, 145);
     analogWrite(right2Pin, 0);
-    analogWrite(left1Pin, 180);
+    analogWrite(left1Pin, 145);
     analogWrite(left2Pin, 0);
+    delay(100);
   }else{
     analogWrite(right1Pin, 0);
-    analogWrite(right2Pin, 180);
+    analogWrite(right2Pin, 145);
     analogWrite(left1Pin, 0);
-    analogWrite(left2Pin, 180);    
+    analogWrite(left2Pin, 145);    
   }
 }
