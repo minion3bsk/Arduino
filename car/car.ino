@@ -1,6 +1,11 @@
 int trigPin = 2;
 int echoPin = 3;
 
+int right1Pin = 5;
+int right2Pin = 6;
+int left1Pin = 9;
+int left2Pin = 10;
+
 
 double duration = 0;
 double distance = 0;
@@ -9,11 +14,10 @@ void setup() {
   Serial.begin( 9600 );
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
-  pinMode(8,OUTPUT);
-  pinMode(9,OUTPUT);
-  pinMode(11, OUTPUT);
-  pinMode(12, OUTPUT);
-
+  pinMode(right1Pin, OUTPUT);
+  pinMode(right2Pin, OUTPUT);
+  pinMode(left1Pin, OUTPUT);
+  pinMode(left2Pin, OUTPUT);
 }
 
 void loop() {
@@ -28,14 +32,14 @@ void loop() {
   duration = duration * 0.000001 * 34000 / 2;
   Serial.println(duration);
   if( duration < 10 ){
-    digitalWrite(8, HIGH);
-    digitalWrite(9, LOW);
-    digitalWrite(11, HIGH);
-    digitalWrite(12, LOW);
+    analogWrite(right1Pin, 180);
+    analogWrite(right2Pin, 0);
+    analogWrite(left1Pin, 180);
+    analogWrite(left2Pin, 0);
   }else{
-    digitalWrite(9, HIGH);
-    digitalWrite(8, LOW);
-    digitalWrite(12, HIGH);
-    digitalWrite(11, LOW);    
+    analogWrite(right1Pin, 0);
+    analogWrite(right2Pin, 180);
+    analogWrite(left1Pin, 0);
+    analogWrite(left2Pin, 180);    
   }
 }
