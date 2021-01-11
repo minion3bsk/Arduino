@@ -42,6 +42,16 @@ void loop() {
     Front();
     delay(3000);
     ran = GetRandom(1,3);
+    switch(ran){
+      case 1:
+        
+        break;
+      case 2:
+      
+        break;
+      case 3:
+        break;
+    }
   }else{
     Back();
   }
@@ -56,7 +66,7 @@ int GetRandom(int min,int max){
 int Front(void){
     analogWrite(right1Pin, 145);
     analogWrite(right2Pin, 0);
-    analogWrite(left1Pin, 145);
+    analogWrite(left1Pin, 135);
     analogWrite(left2Pin, 0);
 }
 
