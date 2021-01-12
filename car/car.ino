@@ -10,7 +10,7 @@ int left1Pin = 9;
 int left2Pin = 10;
 
 int GetRandom(int min,int max);
-char ran = 0;
+int ran = 0;
 int Front(void);
 int Back(void);
 
@@ -37,11 +37,11 @@ void loop() {
   digitalWrite(trigPin, LOW);
   duration = pulseIn(echoPin, HIGH);   
   duration = duration * 0.000001 * 34000 / 2;
-  Serial.println(duration);
   if( duration < 10 ){
     Front();
     delay(3000);
     ran = GetRandom(1,3);
+    Serial.println(ran);
     switch(ran){
       case 1:
         
@@ -74,5 +74,5 @@ int Back(void){
     analogWrite(right1Pin, 0);
     analogWrite(right2Pin, 145);
     analogWrite(left1Pin, 0);
-    analogWrite(left2Pin, 145); 
+    analogWrite(left2Pin, 135); 
 }
